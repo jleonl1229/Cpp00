@@ -1,12 +1,8 @@
 class PhoneBook
 {
-	private
-	{
+	private:
 			
-	}
 
-	public
-	{
+	public:
 	
-	}
 }

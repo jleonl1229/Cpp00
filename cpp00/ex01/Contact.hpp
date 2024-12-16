@@ -8,6 +8,19 @@ class Contact
 		std::string	_darkest_secret;
 
 	public:
+		Contact()
+		{
+			std::cout << "Intrduce the first name: " << std::endl;	
+			
+			std::cout << "Intrduce the last name: " << std::endl;	
+
+			std::cout << "Intrduce the nickname: " << std::endl;	
+
+			std::cout << "Intrduce the phone number: " << std::endl;	
+
+			std::cout << "Intrduce the darkest secret: " << std::endl;	
+		}
+		~Contact() {}
 		void		set_first_name(string name);	
 		std::string	get_first_name();
 		void		set_last_name(string lname);	
