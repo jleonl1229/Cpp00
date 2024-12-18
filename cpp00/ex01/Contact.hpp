@@ -10,15 +10,28 @@ class Contact
 	public:
 		Contact()
 		{
+			std::string	text;
+			int		number;
+
 			std::cout << "Intrduce the first name: " << std::endl;	
-			
+			std:cin >> text;
+			contacto.set_first_name(text);
+
 			std::cout << "Intrduce the last name: " << std::endl;	
+			std:cin >> text;
+			contacto.set_last_name(text);
 
 			std::cout << "Intrduce the nickname: " << std::endl;	
+			std:cin >> text;
+			contacto.set_nickname(text);
 
 			std::cout << "Intrduce the phone number: " << std::endl;	
+			std:cin >> number;
+			contacto.set_phone_number(text);
 
-			std::cout << "Intrduce the darkest secret: " << std::endl;	
+			std::cout << "Intrduce the darkest secret: " << std::endl;
+			std:cin >> text;
+			contacto.set_darkest_secret(text);
 		}
 		~Contact() {}
 		void		set_first_name(string name);	
