@@ -9,6 +9,7 @@ int main(void)
 	std::string	index;
 	int		num;
 	int		i;
+	PhoneBook	phonebook;
 
 	while (true)
 	{
@@ -24,10 +25,12 @@ int main(void)
 		if (choice == "ADD")
 		{
 			/* Here i'll set a method to create a new contact in the phonebook */	
+			phonebook.addcontact();
 		}
 		else if (choice == "SEARCH")
 		{
 			/* Here i'll display all the existing contacts of the agenda */
+			phonebook.showcontacts();
 			while (true)
 			{
 				std::cout << "Index number=> " << std::endl;
@@ -55,6 +58,7 @@ int main(void)
 				std::cout << "The introduced index is: " << num << std::endl;
 				/* Here i'll check if the introduced number exists in the atributte of any object and the loop will break if it doesn't */
 				/* Then i'll display all it's data */ 
+				phonebook.displaycontact(num);
 			}
 		}
 		else if (choice == "EXIT")
