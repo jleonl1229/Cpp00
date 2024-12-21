@@ -35,7 +35,7 @@ void		Contact::set_phone_number(std::string phone_number)
 	this->_phone_number = phone_number;	
 }
 
-int		Contact::get_phone_number(void)
+std::string	Contact::get_phone_number(void)
 {
 	return (this->_phone_number);
 }
