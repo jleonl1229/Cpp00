@@ -12,7 +12,7 @@ class PhoneBook
 	public:
 		PhoneBook()
 		{
-			std::cout << "Creating phone book...";
+			std::cout << "Creating phone book..." << std::endl;
 			_counter = 0;
 		}
 		~PhoneBook() {}

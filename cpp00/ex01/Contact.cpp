@@ -49,3 +49,4 @@ std::string	Contact::get_darkest_secret(void)
 {
 	return (this->_darkest_secret);
 }
+

@@ -2,6 +2,31 @@
 #include <string>
 #include "PhoneBook.hpp"
 
+int	stoi(std::string str)
+{
+	int	i;
+	int	sign;
+	int	num;
+
+	i = 0;
+	sign = 1;
+	num = 0;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if ((str[i] == '+') || (str[i] == '-'))
+	{
+		if (str[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
+	{
+		num = (num * 10) + (str[i] - '0');
+		i++;
+	}
+	return (num * sign);
+}
+
 int main(void)
 {
 	/* char *choice; */
@@ -38,7 +63,7 @@ int main(void)
 				
 				try
 				{
-					num = std::stoi(index);
+					num = stoi(index);
 					if (num < 0 || num > 7)
 					{
 						std::cerr << "Introduced index must be among 0 and 7" << std::endl;
