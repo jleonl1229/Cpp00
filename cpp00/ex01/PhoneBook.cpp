@@ -9,7 +9,6 @@ void	PhoneBook::addcontact(void)
 
 	if (this->_counter >= 8)
 		this->_counter =  this->_counter - 8;	
-	Contact contacts[this->_counter];
 	std::cout << "Intrduce the first name: " << std::endl;	
 	std::cin >> text;
 	contacts[this->_counter].set_first_name(text);
@@ -40,12 +39,18 @@ void	PhoneBook::showcontacts(void)
 	std::string	nick;
 
 	i = 0;
-	name = this->contacts[i].get_first_name();
-	last = this->contacts[i].get_last_name();
-	nick = this->contacts[i].get_nickname();
 	/* while (i <= 7 && i <= this->_counter) */
 	while (i <= 7)
 	{
+		name = "";
+		last = "";
+		nick = "";
+		if (i <= this->_counter)
+		{
+			name = this->contacts[i].get_first_name();
+			last = this->contacts[i].get_last_name();
+			nick = this->contacts[i].get_nickname();
+		}
 		if (name.length() >= 10)
 		{
 			name = name.substr(0, 9);	

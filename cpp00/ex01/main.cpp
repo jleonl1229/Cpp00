@@ -29,7 +29,6 @@ int	stoi(std::string str)
 
 int main(void)
 {
-	/* char *choice; */
 	std::string	choice;
 	std::string	index;
 	int		num;
@@ -49,40 +48,23 @@ int main(void)
 		std::cout << "Introduced option: " << choice << std::endl;
 		if (choice == "ADD")
 		{
-			/* Here i'll set a method to create a new contact in the phonebook */	
 			phonebook.addcontact();
 		}
 		else if (choice == "SEARCH")
 		{
-			/* Here i'll display all the existing contacts of the agenda */
 			phonebook.showcontacts();
 			while (true)
 			{
 				std::cout << "Index number=> " << std::endl;
 				std::cin >> index;
 				
-				try
-				{
-					num = stoi(index);
-					if (num < 0 || num > 7)
-					{
-						std::cerr << "Introduced index must be among 0 and 7" << std::endl;
-						break ;
-					}
-				}
-				catch (const std::invalid_argument& e)
-				{
-					std::cerr << "That's not a number" << std::endl;
+				if (index[0] < '0' || index[0] > '7')
+				{			
+					std::cerr << "Introduced index must be among 0 and 7" << std::endl;
 					break ;
 				}
-				catch (const std::out_of_range& e)
-				{
-					std::cerr << "Introduced number is out of range" << std::endl;
-					break ;
-				}
+				num = stoi(index);
 				std::cout << "The introduced index is: " << num << std::endl;
-				/* Here i'll check if the introduced number exists in the atributte of any object and the loop will break if it doesn't */
-				/* Then i'll display all it's data */ 
 				phonebook.displaycontact(num);
 			}
 		}
