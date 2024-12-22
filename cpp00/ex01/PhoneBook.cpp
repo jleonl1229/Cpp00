@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <iomanip>
 #include "PhoneBook.hpp"
 
 void	PhoneBook::addcontact(void)
@@ -13,23 +14,23 @@ void	PhoneBook::addcontact(void)
 		this->_copy = this->_counter;
 		this->_counter =  this->_counter - 8;	
 	}
-	std::cout << "Intrduce the first name: " << std::endl;	
+	std::cout << "Introduce the first name: " << std::endl;	
 	std::cin >> text;
 	contacts[this->_counter].set_first_name(text);
 
-	std::cout << "Intrduce the last name: " << std::endl;	
+	std::cout << "Introduce the last name: " << std::endl;	
 	std::cin >> text;
 	contacts[this->_counter].set_last_name(text);
 
-	std::cout << "Intrduce the nickname: " << std::endl;	
+	std::cout << "Introduce the nickname: " << std::endl;	
 	std::cin >> text;
 	contacts[this->_counter].set_nickname(text);
 
-	std::cout << "Intrduce the phone number: " << std::endl;	
+	std::cout << "Introduce the phone number: " << std::endl;	
 	std::cin >> text;
 	contacts[this->_counter].set_phone_number(text);
 
-	std::cout << "Intrduce the darkest secret: " << std::endl;
+	std::cout << "Introduce the darkest secret: " << std::endl;
 	std::cin >> text;
 	contacts[this->_counter].set_darkest_secret(text);
 	this->_counter++;
@@ -43,7 +44,7 @@ void	PhoneBook::showcontacts(void)
 	std::string	nick;
 
 	i = 0;
-	/* while (i <= 7 && i <= this->_counter) */
+		std::cout << std::setw(10) << std::right << "Index" << " | " << std::setw(10) << std::right << "First name" << " | " << std::setw(10) << std::right << "Last name" << " | " << std::setw(10) << std::right << "Nickname" << std::endl;
 	while (i <= 7)
 	{
 		name = "";
@@ -76,7 +77,7 @@ void	PhoneBook::showcontacts(void)
 			nick = nick.substr(0, 9);	
 			nick = nick.append(".");
 		}
-		std::cout << i << " | " << name << " | " << last << " | " << nick << std::endl;
+		std::cout << std::setw(10) << std::right << i << " | " << std::setw(10) << std::right << name << " | " << std::setw(10) << std::right << last << " | " << std::setw(10) << std::right << nick << std::endl;
 		i++; 
 	}
 }
