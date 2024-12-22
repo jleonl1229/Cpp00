@@ -8,7 +8,11 @@ void	PhoneBook::addcontact(void)
 	std::string	text;
 
 	if (this->_counter >= 8)
+	{
+		this->_flag = 1;
+		this->_copy = this->_counter;
 		this->_counter =  this->_counter - 8;	
+	}
 	std::cout << "Intrduce the first name: " << std::endl;	
 	std::cin >> text;
 	contacts[this->_counter].set_first_name(text);
@@ -45,7 +49,13 @@ void	PhoneBook::showcontacts(void)
 		name = "";
 		last = "";
 		nick = "";
-		if (i <= this->_counter)
+		if (i <= this->_counter && this->_flag == 0)
+		{
+			name = this->contacts[i].get_first_name();
+			last = this->contacts[i].get_last_name();
+			nick = this->contacts[i].get_nickname();
+		}
+		else if (i <= this->_copy && this->_flag == 1)
 		{
 			name = this->contacts[i].get_first_name();
 			last = this->contacts[i].get_last_name();
