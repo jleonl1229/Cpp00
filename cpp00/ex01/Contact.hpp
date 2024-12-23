@@ -25,6 +25,5 @@ class Contact
 		std::string	get_phone_number();
 		void		set_darkest_secret(std::string secret);
 		std::string	get_darkest_secret();
-		void		init_values();
 };
 #endif

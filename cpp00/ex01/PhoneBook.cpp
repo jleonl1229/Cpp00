@@ -14,24 +14,35 @@ void	PhoneBook::addcontact(void)
 		this->_copy = this->_counter;
 		this->_counter =  this->_counter - 8;	
 	}
-	std::cout << "Introduce the first name: " << std::endl;	
-	std::cin >> text;
+	std::cin.ignore();
+	std::cout << "Introduce the first name: ";	
+	std::getline(std::cin, text);
+	if (text == "")
+		return ;
 	contacts[this->_counter].set_first_name(text);
 
-	std::cout << "Introduce the last name: " << std::endl;	
-	std::cin >> text;
+	std::cout << "Introduce the last name: ";	
+	std::getline(std::cin, text);
+	if (text == "")
+		return ;
 	contacts[this->_counter].set_last_name(text);
 
-	std::cout << "Introduce the nickname: " << std::endl;	
-	std::cin >> text;
+	std::cout << "Introduce the nickname: ";	
+	std::getline(std::cin, text);
+	if (text == "")
+		return ;
 	contacts[this->_counter].set_nickname(text);
 
-	std::cout << "Introduce the phone number: " << std::endl;	
-	std::cin >> text;
+	std::cout << "Introduce the phone number: ";	
+	std::getline(std::cin, text);
+	if (text == "")
+		return ;
 	contacts[this->_counter].set_phone_number(text);
 
-	std::cout << "Introduce the darkest secret: " << std::endl;
-	std::cin >> text;
+	std::cout << "Introduce the darkest secret: ";
+	std::getline(std::cin, text);
+	if (text == "")
+		return ;
 	contacts[this->_counter].set_darkest_secret(text);
 	this->_counter++;
 }
