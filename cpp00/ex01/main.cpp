@@ -58,8 +58,8 @@ int main(void)
 				std::cout << "Index number=> " << std::endl;
 				std::cin >> index;
 				
-				if (index[0] < '0' || index[0] > '7')
-				{			
+				if (index[0] < '0' || index[0] > '7' || index.length() != 1)
+				{		
 					std::cerr << "Introduced index must be among 0 and 7" << std::endl;
 					break ;
 				}
